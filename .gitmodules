@@ -1,0 +1,12 @@
+[submodule "submodule/alasc"]
+	path = submodule/alasc
+	url = git@github.com:denisrosset/alasc.git
+[submodule "submodule/scala-metal"]
+	path = submodule/scala-metal
+	url = https://github.com/denisrosset/metal.git
+[submodule "submodule/scala-attributes"]
+	path = submodule/scala-attributes
+[submodule "submodule/dennis-cyclo"]
+	path = submodule/dennis-cyclo
+[submodule "submodule/dennis-scalin"]
+	path = submodule/dennis-scalin
