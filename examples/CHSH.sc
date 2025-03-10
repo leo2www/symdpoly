@@ -2,12 +2,21 @@
 //
 // We use the correlator notation here
 
+// 指定使用Scala 2.12.8版本
+// Specify Scala version 2.12.8
+interp.configureCompiler(_.settings.scalaVersion.value = "2.12.8")
+
 // Let's import the relevant libraries
-interp.repositories() :+= coursierapi.MavenRepository.of("https://dl.bintray.com/denisrosset/maven")
+// 使用本地Maven仓库和本地Ivy仓库
+
+interp.repositories() ++= Seq(
+  coursierapi.MavenRepository.of(sys.env("HOME") + "/.m2/repository"), // Maven本地仓库
+  coursierapi.IvyRepository.of(sys.env("HOME") + "/.ivy2/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]")
+)
 
 @
 
-import $ivy.`net.alasc::symdpoly-core:0.7.6`
+import $ivy.`net.alasc::symdpoly-core::0.7.7-SNAPSHOT`
 import net.alasc.symdpoly._
 import defaults._
 

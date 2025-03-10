@@ -1,12 +1,19 @@
 [submodule "submodule/alasc"]
 	path = submodule/alasc
-	url = git@github.com:denisrosset/alasc.git
+	# url = git@github.com:denisrosset/alasc.git
+	url = git@github.com:leo2www/alasc.git 	# leo2www
 [submodule "submodule/scala-metal"]
 	path = submodule/scala-metal
-	url = https://github.com/denisrosset/metal.git
+	url = git@github.com:leo2www/metal.git 	# leo2www
 [submodule "submodule/scala-attributes"]
 	path = submodule/scala-attributes
+	# url = https://github.com/denisrosset/attributes
+	url = git@github.com:leo2www/attributes.git 	# leo2www
 [submodule "submodule/dennis-cyclo"]
 	path = submodule/dennis-cyclo
+	# url = https://github.com/denisrosset/cyclo.git 
+	url = git@github.com:leo2www/cyclo.git 	# leo2www
 [submodule "submodule/dennis-scalin"]
 	path = submodule/dennis-scalin
+	# url = https://github.com/denisrosset/scalin.git
+	url = git@github.com:leo2www/scalin.git 	# leo2www

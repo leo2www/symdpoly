@@ -3,8 +3,11 @@ import ReleaseTransformations._
 
 val scala212Version = "2.12.8"
 
-val alascVersion = "0.16.0.3"
-val attributesVersion = "0.30"
+// val alascVersion = "0.16.0.3"
+// val alascVersion = "0.16.0.4-SNAPSHOT"
+val alascVersion = "0.16.0.4-SNAPSHOT-withlaw"
+//
+val attributesVersion = "0.30-SNAPSHOT"
 val betterFilesVersion = "3.4.0"
 val catsVersion = "1.1.0"
 val fs2Version = "1.0.3"
@@ -14,17 +17,20 @@ val jGraphTVersion = "1.2.0"
 val jOptimizerVersion = "4.0.0"
 val kindProjectorVersion = "0.9.8"
 val mflVersion = "0.5.1"
-val metalVersion = "0.16.0.0"
+// scala-metal:dennis
+val metalVersion = "0.16.0.1-SNAPSHOT"
 val progressBarVersion = "0.7.3"
 val arm4SVersion = "1.1.0"
 val scalaCheckVersion = "1.13.5"
 val scalaCollectionCompatVersion = "1.0.0"
 val scalaTestVersion = "3.0.5"
-val scalinVersion = "0.16.0.0"
+// 
+val scalinVersion = "0.16.0.2-SNAPSHOT"
 val shapelessVersion = "2.3.3"
 val sourcecodeVersion = "0.1.4"
 val spireVersion = "0.16.0"
-val spireCycloVersion = "0.16.0.0"
+// 本地构建
+val spireCycloVersion = "0.16.0.1-SNAPSHOT"
 
 lazy val symdpoly = (project in file("."))
   .settings(moduleName := "symdpoly")
@@ -60,7 +66,7 @@ lazy val tests = (project in file("modules/tests"))
 
 lazy val examples = (project in file("modules/examples"))
   .settings(moduleName := "symdpoly-examples")
-  .settings(noPublishSettings)
+  //.settings(noPublishSettings)
   .settings(symdpolySettings)
   .dependsOn(core)
 
@@ -96,9 +102,14 @@ lazy val commonSettings = Seq(
   )),
   //scalacOptions ++= Seq("-opt:l:inline", "-opt-inline-from:**"),
   resolvers ++= Seq(
-    "bintray/denisrosset/maven" at "https://dl.bintray.com/denisrosset/maven",
+    //"bintray/denisrosset/maven" at "https://dl.bintray.com/denisrosset/maven",
     Resolver.sonatypeRepo("snapshots"),
-    Resolver.sonatypeRepo("releases")
+    Resolver.sonatypeRepo("releases"),
+    "Maven Central" at "https://repo1.maven.org/maven2",
+    "jitpack.io" at "https://jitpack.io",
+    // 本地构建器
+    Resolver.mavenLocal,
+    Resolver.file("local-ivy", file(Path.userHome.absolutePath + "/.ivy2/local"))(Resolver.ivyStylePatterns)
   ),
   libraryDependencies ++= Seq(
     "net.alasc" %% "attributes" % attributesVersion,
