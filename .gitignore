@@ -3,7 +3,7 @@ target
 .ensime
 .idea
 *~
-lib
+/lib
 /*.txt
 /*.dat-s
 ._*
@@ -11,3 +11,10 @@ lib
 # 忽略local
 **/*.local.*
 **/*.local
+
+# .gitkeek 标记需要保留的文件夹
+!**/*/.gitkeep
+
+# mosek需要用户自己安装
+**/mosek.lic
+**/mosek.jar
